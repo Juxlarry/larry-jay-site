@@ -1,0 +1,50 @@
+---
+import Icon from './Icon.astro';
+import data from '../data/portfolio.json';
+import { byId, caseUrl } from '../lib/format';
+
+const capIcon: Record<string, string> = {
+  automation: 'flow-arrow', 'enterprise-apps': 'buildings', ai: 'brain', web: 'browsers',
+  mobile: 'device-mobile', architecture: 'tree-structure', product: 'kanban',
+};
+const capClass: Record<string, string> = { automation: 'big', 'enterprise-apps': 'wide dots', product: 'wide' };
+const order = ['automation', 'enterprise-apps', 'ai', 'web', 'mobile', 'architecture', 'product'];
+const caps = order.map((id) => data.capabilities.find((c) => c.id === id)).filter((c) => !!c);
+const mini = [['envelope-simple', 'Request arrives'], ['git-branch', 'Rules checked'], ['seal-check', 'Approved'], ['database', 'Recorded and reported']];
+// Link to a case page when the project has one, otherwise to its row in the projects list.
+const proofHref = (id: string) => (byId[id]?.featured ? caseUrl(byId[id]) : `#p-${id}`);
+---
+<section class="gut" id="capabilities">
+  <div class="wrap">
+    <h2>One person across the whole system.</h2>
+    <p class="sub">From the data model and approval rules to the screen people tap on.</p>
+    <div class="bento">
+      {caps.map((c) => (
+        <article class={`cell ${capClass[c.id] ?? ''}`}>
+          <Icon name={capIcon[c.id]} />
+          <h3>{c.name}</h3>
+          <p>{c.summary}</p>
+          {c.id === 'automation' && (
+            <div class="mini" id="mini" aria-label="Example automation">
+              {mini.map(([ic, label], k) => (
+                <Fragment>
+                  {k > 0 && <div class="mc on"></div>}
+                  <div class="ms on"><Icon name={ic} />{label}<span class="d"></span></div>
+                </Fragment>
+              ))}
+            </div>
+          )}
+          {(c.id === 'automation' || c.id === 'enterprise-apps') && (
+            <div class="chips">{c.skills.slice(0, 6).map((s) => <span class="pill">{s}</span>)}</div>
+          )}
+          <p class="proof">
+            Seen in{' '}
+            {c.proofProjects.slice(0, c.id === 'automation' ? 3 : 2).filter((id) => byId[id]).map((id, i, arr) => (
+              <Fragment><a href={proofHref(id)}>{byId[id].name}</a>{i < arr.length - 1 ? ', ' : ''}</Fragment>
+            ))}
+          </p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

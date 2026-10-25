@@ -1,0 +1,17 @@
+---
+// A project's workflow as a step list that plays when scrolled into view (see scripts/home.ts).
+interface Props { steps: string[]; status?: string; label: string }
+const { steps, status = 'Delivered', label } = Astro.props;
+---
+<div class="runner" role="button" tabindex="0" aria-label={`Replay the ${label} workflow`}>
+  <div class="canvas-head"><span><strong>Workflow</strong></span><span>{steps.length} steps</span></div>
+  <div class="stage">
+    {steps.map((s, k) => (
+      <Fragment>
+        {k > 0 && <div class="conn"><i></i></div>}
+        <div class="step done"><span class="n">{String(k + 1).padStart(2, '0')}</span>{s}<span class="d"></span></div>
+      </Fragment>
+    ))}
+  </div>
+  <div class="foot"><span>{status}</span><span class="st">Ready</span></div>
+</div>

@@ -1,0 +1,71 @@
+---
+import Icon from './Icon.astro';
+import { iconInner } from '../lib/icons';
+import { projects } from '../lib/format';
+
+const nodes = [
+  { id: 'n1', x: 180, y: 20, icon: 'lightning', kick: 'TRIGGER', title: 'Claim submitted' },
+  { id: 'n2', x: 180, y: 122, icon: 'git-branch', kick: 'CONDITION', title: 'Within balance?' },
+  { id: 'n3', x: 30, y: 226, icon: 'seal-check', kick: 'APPROVAL', title: 'HR L1 + L2' },
+  { id: 'n4', x: 330, y: 226, icon: 'bell-ringing', kick: 'NOTIFY', title: 'Employee updated' },
+  { id: 'n5', x: 180, y: 330, icon: 'database', kick: 'PAYROLL', title: 'Added to batch' },
+];
+---
+<div id="top">
+  <section class="hero gut">
+    <div class="wrap">
+      <div>
+        <div class="hi">
+          <img src="/avatar.svg" alt="Illustrated avatar of Larry Jay" width="48" height="48" />
+          <span class="status running" id="status"><i></i><span id="statusText">Flow running</span></span>
+        </div>
+        <h1><span class="scr">I turn manual work</span> <span class="scr">into flows that</span> <span class="scr hl">run themselves.</span></h1>
+        <p class="lede">Automation and solutions architect in Accra. I turn manual processes into enterprise apps, flows and AI agents.</p>
+        <div class="ctas"><a class="btn gold" href="#contact">Start a project</a><a class="btn" href="#work">See the work</a></div>
+      </div>
+      <figure class="canvas">
+        <div class="canvas-head">
+          <span><strong>Benefit claim</strong> cloud flow</span>
+          <button class="replay" id="replay" type="button"><Icon name="lightning" />Run again</button>
+        </div>
+        <div class="stage">
+          <svg class="flow" viewBox="0 0 560 410" role="img" aria-label="Automation flow: a claim is submitted, checked against the balance, approved by HR while the employee is notified, then added to a payroll batch.">
+            <path class="wire" id="w1" d="M280 76 V122" />
+            <path class="wire" id="w2a" d="M280 178 C280 206 130 198 130 226" />
+            <path class="wire" id="w2b" d="M280 178 C280 206 430 198 430 226" />
+            <path class="wire" id="w3a" d="M130 282 C130 312 280 300 280 330" />
+            <path class="wire" id="w3b" d="M430 282 C430 312 280 300 280 330" />
+            {nodes.map((n) => (
+              <g class="node" id={n.id} transform={`translate(${n.x},${n.y})`}>
+                <rect class="card" width="200" height="56" rx="10" />
+                <rect class="chip" x="12" y="14" width="28" height="28" rx="6" />
+                <svg class="glyph" x="17" y="19" width="18" height="18" viewBox="0 0 256 256" set:html={iconInner(n.icon)} />
+                <text class="kick" x="50" y="25">{n.kick}</text>
+                <text class="title" x="50" y="42">{n.title}</text>
+                <circle class="dot" cx="184" cy="28" r="7" />
+                <path class="tick" d="M180.5 28 l2.5 2.5 l4-5" />
+              </g>
+            ))}
+            {[['pk1', 280, 76], ['pk2', 280, 178], ['pk3', 280, 178], ['pk4', 130, 282], ['pk5', 430, 282]].map(([id, cx, cy]) => (
+              <circle class="packet" id={String(id)} r="5" cx={cx} cy={cy} opacity="0" />
+            ))}
+          </svg>
+        </div>
+        <div class="log" id="log">
+          <p><span class="t">09:14:02</span> Claim #4812 submitted, Accra</p>
+          <p><span class="t">09:14:02</span> Balance check: within limit</p>
+          <p><span class="t">09:14:03</span> Sent to HR approver, employee notified</p>
+          <p><span class="t">09:14:04</span> <span class="ok">Succeeded</span>, added to payroll batch in 1.8s</p>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <div class="gut">
+    <div class="wrap kpis">
+      <div class="kpi"><b data-to="7" data-suffix="+">7+</b><span>years building production systems</span></div>
+      <div class="kpi"><b data-to="9">9</b><span>countries running my apps</span></div>
+      <div class="kpi"><b data-to={projects.length}>{projects.length}</b><span>builds across enterprise, client and personal work</span></div>
+    </div>
+  </div>
+</div>

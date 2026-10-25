@@ -1,0 +1,96 @@
+---
+import '../styles/global.css';
+import Icon from '../components/Icon.astro';
+import data from '../data/portfolio.json';
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Which dock item to highlight on pages other than home. */
+  current?: 'work' | 'guestbook';
+}
+const {
+  title = 'Larry Jay | Automation and Solutions Architect',
+  description = data.positioning.bio.short,
+  current,
+} = Astro.props;
+
+const onHome = Astro.url.pathname === '/';
+// Section links work from any page: on home they scroll, elsewhere they go home first.
+const s = (id: string) => (onHome ? `#${id}` : `/#${id}`);
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const links = [
+  ['work', 'Work'], ['capabilities', 'Expertise'], ['experience', 'Experience'],
+  ['training', 'Training'], ['projects', 'Projects'], ['about', 'About'],
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL('/avatar.svg', Astro.site)} />
+    <meta name="theme-color" content="#0C1117" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#F3F5F8" media="(prefers-color-scheme: light)" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;800&family=Geist+Mono:wght@400;500&display=swap" />
+    <!-- Apply the saved theme before first paint so there's no flash -->
+    <script is:inline>
+      try { const t = localStorage.getItem('lj-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="top gut">
+      <div class="wrap">
+        <a class="mark" href={onHome ? '#top' : '/'}>larry<span>.</span>jay</a>
+        <nav aria-label="Page sections">
+          <ul class="links">
+            {links.map(([id, label]) => <li><a href={s(id)} data-sec={id}>{label}</a></li>)}
+          </ul>
+        </nav>
+        <div class="right">
+          <button class="iconbtn" id="theme" type="button" aria-label="Switch light or dark mode">
+            <Icon name="moon" class="theme-light" /><Icon name="sun" class="theme-dark" />
+          </button>
+          <a class="btn gold" href={s('contact')}>Start a project</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main"><slot /></main>
+
+    <footer class="gut">
+      <div class="wrap">
+        <span>© {new Date().getFullYear()} Lawrence Danso</span>
+        <span>{data.profile.location}, {data.profile.timezone}</span>
+      </div>
+    </footer>
+
+    <nav class="dock" aria-label="Quick navigation">
+      <a class="note" href="/guestbook/" aria-current={current === 'guestbook' ? 'page' : undefined}>
+        Sign my wall <Icon name="arrow-up-right" />
+      </a>
+      <ul>
+        <li><a class="ic" href={onHome ? '#top' : '/'} data-sec="top" aria-current={onHome ? 'true' : undefined}><Icon name="house" /><span class="lbl">Home</span></a></li>
+        <li><a class="ic" href={s('work')} data-sec="work" aria-current={current === 'work' ? 'true' : undefined}><Icon name="briefcase" /><span class="lbl">Work</span></a></li>
+        <li><a class="ic" href={s('training')} data-sec="training"><Icon name="chalkboard-teacher" /><span class="lbl">Training</span></a></li>
+        <li><a class="ic" href={s('about')} data-sec="about"><Icon name="user" /><span class="lbl">About</span></a></li>
+        <li><a class="ic" href={s('contact')} data-sec="contact"><Icon name="envelope-simple" /><span class="lbl">Contact</span></a></li>
+      </ul>
+    </nav>
+
+    <script>
+      import '../scripts/site';
+    </script>
+  </body>
+</html>

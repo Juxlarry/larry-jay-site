@@ -1,0 +1,21 @@
+---
+import Icon from './Icon.astro';
+import data from '../data/portfolio.json';
+---
+<section class="gut" id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <h2>Got a process that should run itself?</h2>
+      <p class="contact-sub">Tell me what your team does by hand today. I'll show you what it looks like as a flow.</p>
+      <div class="row">
+        <code id="email">{data.profile.email}</code>
+        <button class="btn gold" id="copy" type="button" data-email={data.profile.email}><Icon name="copy" /><span>Copy email</span></button>
+      </div>
+      <div class="row">
+        <a class="btn" href={data.profile.links.linkedin} target="_blank" rel="noopener"><Icon name="linkedin-logo" />LinkedIn</a>
+        <a class="btn" href={data.profile.links.github} target="_blank" rel="noopener"><Icon name="github-logo" />GitHub</a>
+      </div>
+      <p class="note-link">Not ready to talk yet? <a href="/guestbook/">Sign my wall</a>.</p>
+    </div>
+  </div>
+</section>

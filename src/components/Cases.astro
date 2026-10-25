@@ -1,0 +1,42 @@
+---
+import Icon from './Icon.astro';
+import Workflow from './Workflow.astro';
+import Gallery from './Gallery.astro';
+import { featured, fmtPeriod, isFilled, caseUrl } from '../lib/format';
+---
+<section class="gut" id="work">
+  <div class="wrap">
+    <p class="eyebrow">Selected work</p>
+    <h2>Every project is a flow. Watch each one run.</h2>
+    <p class="sub">Each case pins as you scroll. Client work plays its workflow; my own products show real screens.</p>
+    <div class="stack-wrap">
+      {featured.map((p) => (
+        <article class="case" id={`p-${p.id}`}>
+          <div>
+            <div class="meta">{p.sector}</div>
+            <h3>{p.name}</h3>
+            <p class="by">
+              {isFilled(p.client) && <Fragment><b>{p.client}</b>, </Fragment>}{p.role}
+              {fmtPeriod(p.period) && <Fragment><br />{fmtPeriod(p.period)}</Fragment>}
+            </p>
+            <p class="sum">{p.summary}</p>
+            {p.outcomes && p.outcomes.length > 0 && (
+              <div class="outs">
+                {p.outcomes.slice(0, 3).map((o) => <div class="out"><b>{o.value}</b><span>{o.label}</span></div>)}
+              </div>
+            )}
+            <div class="stackp">{p.stack.filter(isFilled).slice(0, 7).map((s) => <span class="pill">{s}</span>)}</div>
+            <div class="case-links">
+              <a class="more" href={caseUrl(p)}>Read the case study <Icon name="arrow-up-right" /></a>
+              {p.links?.live && <a class="more" href={p.links.live} target="_blank" rel="noopener">Visit live <Icon name="arrow-up-right" /></a>}
+              {p.links?.repo && <a class="more" href={p.links.repo} target="_blank" rel="noopener">View code <Icon name="github-logo" /></a>}
+            </div>
+          </div>
+          {p.gallery && p.gallery.length > 0
+            ? <Gallery shots={p.gallery} name={p.name} />
+            : <Workflow steps={p.flow} status={isFilled(p.status) ? p.status : 'Delivered'} label={p.name} />}
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

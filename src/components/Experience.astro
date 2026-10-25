@@ -1,0 +1,21 @@
+---
+import data from '../data/portfolio.json';
+import { fmtDate } from '../lib/format';
+---
+<section class="gut" id="experience">
+  <div class="wrap">
+    <h2>Seven years in industries that can't afford downtime.</h2>
+    <p class="sub">Telecom, insurance, banking and healthcare, plus an independent studio.</p>
+    <div class="tl" id="tl">
+      <div class="rail"><i id="railFill"></i></div>
+      {data.experience.map((e) => (
+        <div class="job">
+          <span class="when">{e.start ? `${fmtDate(e.start)} - ${e.end ? fmtDate(e.end) : 'Present'}` : 'Ongoing'}</span>
+          <h3>{e.role}</h3>
+          <p class="co"><b>{e.company}</b>{e.client ? `, for ${e.client}` : ''}. {e.location}</p>
+          <ul>{e.highlights.slice(0, 4).map((h) => <li>{h}</li>)}</ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

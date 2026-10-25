@@ -1,0 +1,1585 @@
+{
+  "meta": {
+    "version": "1.6.0",
+    "lastUpdated": "2026-10-24",
+    "sources": [
+      "12 resumes/CVs and cover letter supplied by Jay (Oct 2026)",
+      "Builds discussed with Claude: Bayobab Probation Journey, Bayobab Lifestyle Claims Portal, Tours a Tour, Her Prayer Hub, EBABA Academy, Accra Sankofa Elects, GafferXi, Qismic Profile, Bensy Legacy Product Discovery Form"
+    ],
+    "howToUse": "Render profile + positioning in the hero, capabilities as the 'What I do' section, projects (featured first, sorted by 'order') as the work grid, and experience as the timeline. Each project's 'flow' array is a list of steps the hero animation can play as nodes. Anything with verified:false or listed in todo[] should be confirmed before going live.",
+    "namingRule": "Each client is named once per entry, in its 'client' field. Summaries, highlights and bios describe the work without repeating the name.",
+    "groups": {
+      "enterprise": "Work for employers and their clients",
+      "client": "Private client projects, shown without code links or internal detail",
+      "personal": "Own products and side projects"
+    }
+  },
+  "profile": {
+    "name": "Lawrence Danso",
+    "preferredName": "Larry Jay",
+    "fullNameAlt": "Lawrence Adu Danso",
+    "location": "Accra, Ghana",
+    "timezone": "GMT (UTC+0)",
+    "workModes": [
+      "Remote",
+      "Hybrid",
+      "On-site (Ghana)"
+    ],
+    "yearsExperience": "7+",
+    "email": "lawrencedanso.jnr@gmail.com",
+    "phone": "+233 20 079 9993",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/kadlj",
+      "github": "https://github.com/Juxlarry",
+      "studio": "https://bensylegacy.com"
+    },
+    "studio": "Bensy Legacy",
+    "brand": "larry.jay"
+  },
+  "positioning": {
+    "title": "Automation & Solutions Architect",
+    "titleAlternatives": [
+      "Solutions Architect · Automation, Enterprise Apps & AI",
+      "Automation Architect & Full-Stack Engineer",
+      "Enterprise Solutions Architect (Power Platform & AI Agents)"
+    ],
+    "headline": "I design and build the systems businesses run on: automations, enterprise apps, web platforms and AI agents.",
+    "tagline": "Manual work in. Flows that run themselves out.",
+    "heroHighlight": "flows that run themselves.",
+    "bio": {
+      "short": "Automation and solutions architect in Accra. I turn manual, email-and-spreadsheet processes into enterprise apps, automated workflows and AI-assisted systems for telecom, insurance, banking and healthcare.",
+      "medium": "I'm Larry Jay, an automation and solutions architect with 7+ years building production software across telecommunications, insurance, banking and healthcare. I design the whole system: the data model, the approval logic, the integrations and the interface people actually use. Today I build multi-country Power Platform solutions for a telecom group operating in nine markets. Before that I shipped Rails, .NET, Node and Python platforms, RPA for banking reconciliation, and AI-assisted tools for insurance and HR.",
+      "long": "I'm Lawrence 'Larry Jay' Danso, an automation and solutions architect based in Accra, Ghana. For 7+ years I've built production systems for organisations where mistakes cost money: a telecom group running HR and payroll across nine countries, an insurer managing risk compliance, banks reconciling thousands of transactions a day, and health institutions handling patient records.\n\nMy work sits where process meets software. I map how a business actually runs, find the steps people repeat by hand, and replace them with systems that are auditable, role-secured and easy to use. That might be a Power Apps and Power Automate platform, a Rails or .NET application, a Python RPA bot, or an AI agent that routes and triages work.\n\nI also take ownership beyond code. I've served as Associate Product Owner, gathered requirements with HR, Finance and executive stakeholders, run UAT across markets, and written the documentation and training that gets people to adopt what we ship. As lead developer at Bensy Legacy, I build web products for independent clients, from booking platforms to payment-enabled WordPress sites.\n\nI'm currently deepening into agentic solutions on the Microsoft stack: Dataverse, Copilot Studio and Azure AI Foundry.",
+      "aboutExtra": "Outside work, I love sport and building communities."
+    },
+    "whatIDo": [
+      "Automate business processes end to end",
+      "Architect enterprise apps with role-based security and audit trails",
+      "Build full-stack web platforms and APIs",
+      "Integrate AI agents and LLMs into real workflows",
+      "Lead products from requirements to rollout"
+    ],
+    "industries": [
+      "Telecommunications",
+      "Insurance",
+      "Banking & Finance",
+      "Healthcare",
+      "HR & People Operations",
+      "Education",
+      "Tourism",
+      "Faith & Non-profit"
+    ]
+  },
+  "capabilities": [
+    {
+      "id": "automation",
+      "name": "Process Automation & RPA",
+      "summary": "Approval engines, scheduled jobs, reconciliation bots and notification chains that remove manual handoffs.",
+      "skills": [
+        "Power Automate (cloud & desktop)",
+        "Automation Anywhere",
+        "UiPath",
+        "n8n",
+        "Python automation",
+        "OpenPyxl",
+        "Office Scripts",
+        "Child-flow & try/catch patterns"
+      ],
+      "proofProjects": [
+        "bayobab-probation-journey",
+        "bayobab-lifestyle-claims",
+        "financial-rpa-banking",
+        "zurich-risk-assessment"
+      ]
+    },
+    {
+      "id": "enterprise-apps",
+      "name": "Enterprise Applications",
+      "summary": "Multi-country, multi-role business apps with RBAC, audit logs and country-specific rules in one codebase.",
+      "skills": [
+        "Power Apps (canvas)",
+        "Power Fx",
+        "SharePoint Online",
+        "Dataverse",
+        "Microsoft Entra ID",
+        "Azure",
+        "ASP.NET / .NET 8",
+        "Entity Framework"
+      ],
+      "proofProjects": [
+        "bayobab-probation-journey",
+        "bayobab-lifestyle-claims",
+        "insurance-suite",
+        "hr-management-app"
+      ]
+    },
+    {
+      "id": "ai",
+      "name": "AI & Agent Integration",
+      "summary": "LLM features and AI agents that triage, route, score and draft inside existing workflows.",
+      "skills": [
+        "Microsoft Copilot Studio",
+        "Azure AI Foundry (learning)",
+        "OpenAI API",
+        "Claude API",
+        "RAG",
+        "Prompt engineering",
+        "PyTorch",
+        "Pydantic"
+      ],
+      "proofProjects": [
+        "ai-resume-scanner",
+        "llm-data-modeling-tool",
+        "hirivo",
+        "cutcraft",
+        "zurich-risk-assessment"
+      ]
+    },
+    {
+      "id": "web",
+      "name": "Full-Stack Web Platforms",
+      "summary": "Production web apps and APIs, from Rails monoliths to Next.js front ends and payment-enabled sites.",
+      "skills": [
+        "Ruby on Rails",
+        "Hotwire",
+        "Node.js / Express",
+        "Django / FastAPI",
+        "Angular",
+        "React / Next.js",
+        "Go",
+        "WordPress (plugin-free themes)",
+        "REST & GraphQL"
+      ],
+      "proofProjects": [
+        "yarysa-emr",
+        "tourist-insurance-api",
+        "tours-a-tour",
+        "her-prayer-hub",
+        "accra-sankofa-elects"
+      ]
+    },
+    {
+      "id": "mobile",
+      "name": "Mobile & Cross-Platform",
+      "summary": "Cross-platform web and mobile apps in Flutter, plus mobile-ready Power Apps used by staff across countries.",
+      "skills": [
+        "Flutter",
+        "Flutter Web",
+        "Firebase",
+        "Power Apps mobile",
+        "Responsive / PWA web"
+      ],
+      "proofProjects": [
+        "atada-work",
+        "bayobab-probation-journey"
+      ],
+      "verified": true
+    },
+    {
+      "id": "architecture",
+      "name": "Solution Architecture & Data",
+      "summary": "Data models, integration design and security boundaries that keep systems correct as they scale.",
+      "skills": [
+        "Schema design (PostgreSQL, MySQL, MongoDB)",
+        "Redis caching",
+        "Idempotent transaction design",
+        "Delegation-safe SharePoint models",
+        "Hub-and-spoke Azure networking",
+        "CI/CD & Docker"
+      ],
+      "proofProjects": [
+        "bayobab-lifestyle-claims",
+        "yarysa-emr",
+        "tours-a-tour",
+        "financial-rpa-banking"
+      ]
+    },
+    {
+      "id": "product",
+      "name": "Product Ownership & Delivery",
+      "summary": "Requirements, prioritisation, UAT and rollout, so what gets built is what the business needed.",
+      "skills": [
+        "Associate Product Owner",
+        "Agile / Scrum (PMI-ACP)",
+        "Stakeholder workshops",
+        "UAT across markets",
+        "Technical documentation",
+        "Training & adoption"
+      ],
+      "proofProjects": [
+        "ai-resume-scanner",
+        "bayobab-probation-journey",
+        "tours-a-tour"
+      ]
+    }
+  ],
+  "skills": {
+    "microsoft": [
+      "Power Apps",
+      "Power Automate",
+      "Power Automate Desktop",
+      "SharePoint",
+      "Dataverse",
+      "Copilot Studio",
+      "Microsoft Entra ID",
+      "Azure",
+      "Office Scripts"
+    ],
+    "automation": [
+      "Automation Anywhere",
+      "UiPath",
+      "OpenBots Studio",
+      "n8n",
+      "Python scripting"
+    ],
+    "languages": [
+      "Ruby",
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "C#",
+      "Go",
+      "SQL",
+      "PHP",
+      "HTML/CSS"
+    ],
+    "frameworks": [
+      "Ruby on Rails",
+      "Hotwire",
+      "ASP.NET / .NET 8",
+      "Entity Framework",
+      "Node.js",
+      "Express",
+      "Django",
+      "FastAPI",
+      "Angular",
+      "React",
+      "Next.js",
+      "Flutter",
+      "WordPress"
+    ],
+    "data": [
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB",
+      "Redis",
+      "Firestore",
+      "Supabase",
+      "SharePoint lists",
+      "pandas",
+      "NumPy"
+    ],
+    "ai": [
+      "OpenAI API",
+      "Claude API",
+      "RAG",
+      "LLM integration",
+      "Prompt engineering",
+      "PyTorch"
+    ],
+    "cloudDevops": [
+      "Azure",
+      "AWS",
+      "Google Cloud",
+      "Firebase",
+      "Heroku",
+      "Vercel",
+      "Netlify",
+      "Docker",
+      "GitHub Actions",
+      "New Relic"
+    ],
+    "payments": [
+      "Paystack",
+      "Subscription billing",
+      "Payment gateway integration"
+    ]
+  },
+  "experience": [
+    {
+      "id": "techmahindra-mtn",
+      "role": "Power Platform Developer",
+      "company": "Tech Mahindra",
+      "client": "MTN Group",
+      "location": "Accra, Ghana",
+      "start": "2026-05",
+      "end": null,
+      "verified": true,
+      "summary": "Lead developer and architect on HR and finance applications used across nine markets in Africa and the UAE.",
+      "highlights": [
+        "Built and took to production a probation lifecycle platform covering employees, managers, HR and CHRO across nine operating companies.",
+        "Architected a lifestyle benefit and payroll claims portal with two-stage approval, live balance tracking and payout batching across five countries.",
+        "Encoded country-specific labour and tax rules into one app instead of separate builds per market.",
+        "Designed role-based access with Entra ID groups and item-level SharePoint permissions.",
+        "Ran requirements, UAT and go-live with HR, Finance and executive stakeholders, and provide ongoing post-launch support."
+      ],
+      "projects": [
+        "bayobab-probation-journey",
+        "bayobab-lifestyle-claims"
+      ]
+    },
+    {
+      "id": "4th-ir",
+      "role": "Senior Software Engineer / Risk Assessment Automation Engineer",
+      "company": "4th-IR",
+      "client": "Zurich Insurance",
+      "location": "Tse Addo, Ghana (Remote)",
+      "start": "2024-09",
+      "end": "2025-08",
+      "verified": true,
+      "summary": "Backend, automation and AI work on an insurer's Risk Assessment Suite (Sep 2024 - Jul 2025), plus product ownership on AI tools (Oct 2024 - Aug 2025).",
+      "highlights": [
+        "Built automation bots for the risk register that issue policy alerts and flag breaches in real time.",
+        "Led AI agent and automation integrations across the Microsoft stack.",
+        "Served as Associate Product Owner, clarifying scope and clearing delivery bottlenecks.",
+        "Built developer tooling that removed repetitive setup work from each sprint.",
+        "Wrote onboarding guides that shortened new-engineer ramp-up."
+      ],
+      "projects": [
+        "zurich-risk-assessment",
+        "ai-resume-scanner",
+        "llm-data-modeling-tool"
+      ]
+    },
+    {
+      "id": "enterprise-computing",
+      "role": "Senior Software & Automation Engineer",
+      "company": "Enterprise Computing Ltd",
+      "location": "Tema, Ghana",
+      "start": "2021-12",
+      "end": "2024-09",
+      "summary": "Full-stack and automation engineer on enterprise platforms for insurance, banking, HR and healthcare clients.",
+      "highlights": [
+        "Built enterprise platforms for HR, visitor management, queueing, insurance and health, serving multiple business units.",
+        "Automated reconciliation, client onboarding and reporting for two banks and an insurer, using Power Automate, Python and OCR.",
+        "Integrated AI agents for task triage and routing.",
+        "Built GitHub collaboration dashboards that cut code review time from 7 days to 2.",
+        "Maintained a suite of Power Platform apps, shipping 15+ features and 20+ reliability fixes."
+      ],
+      "projects": [
+        "insurance-suite",
+        "tourist-insurance-api",
+        "hr-management-app",
+        "financial-rpa-banking",
+        "github-collab-viz"
+      ]
+    },
+    {
+      "id": "devdex",
+      "role": "Software Engineer",
+      "company": "Devdex Software",
+      "location": "Tema, Ghana",
+      "start": "2020-01",
+      "end": "2021-11",
+      "verified": true,
+      "summary": "Rails engineer on healthcare, insurance and education platforms.",
+      "highlights": [
+        "Core contributor to a subscription EMR platform used by 8+ health institutions.",
+        "Owned the stock and inventory module and built a patient feedback system.",
+        "Designed ACID-safe workflows for medical records, billing and audit trails.",
+        "Designed and taught a practice-based Ruby and JavaScript training programme."
+      ],
+      "projects": [
+        "yarysa-emr"
+      ]
+    },
+    {
+      "id": "bensy-legacy",
+      "role": "Lead Developer",
+      "company": "Bensy Legacy",
+      "location": "Accra, Ghana",
+      "start": null,
+      "end": null,
+      "verified": false,
+      "summary": "Studio building web products, booking platforms and payment-enabled sites for clients.",
+      "highlights": [
+        "Delivers client builds from scoping to launch using a proprietary Product Discovery Form.",
+        "Builds plugin-free WordPress themes with secure Paystack payments.",
+        "Ships web apps on Firebase, Supabase, Vercel and Netlify."
+      ],
+      "projects": [
+        "tours-a-tour",
+        "her-prayer-hub",
+        "ebaba-academy",
+        "bensy-legacy-platform",
+        "product-discovery-form"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "bayobab-probation-journey",
+      "order": 1,
+      "featured": true,
+      "name": "Probation Journey",
+      "client": "Bayobab (MTN Group subsidiary)",
+      "sector": "Telecommunications · HR",
+      "type": "Enterprise app + automation",
+      "role": "Lead developer & architect",
+      "period": {
+        "start": "2026-08",
+        "end": "2026-10"
+      },
+      "status": "Live in production · post-launch support ongoing",
+      "summary": "A probation lifecycle platform that replaced email and spreadsheet tracking for new hires across nine operating companies.",
+      "problem": "Probation reviews ran on emails and spreadsheets. Milestones were missed, managers weren't reminded, and HR had no single view across countries with different probation lengths.",
+      "solution": "A Power Apps platform with separate employee, manager, HR and CHRO experiences. Cases are created automatically from Oracle HR headcount reports. Power Automate flows schedule milestone check-ins, send reminders, escalate overdue reviews and flag at-risk cases. One app handles 90-day and 180-day probation rules by country.",
+      "outcomes": [
+        {
+          "value": "9",
+          "label": "operating companies on one platform",
+          "verified": true
+        },
+        {
+          "value": "4",
+          "label": "roles with their own portal: employee, manager, HR, CHRO",
+          "verified": true
+        },
+        {
+          "value": "0",
+          "label": "manual case creation: cases are generated from HR headcount reports",
+          "verified": true
+        }
+      ],
+      "highlights": [
+        "Governance rules built in: managers can recommend Confirm or Extend; only HR and the CHRO can Terminate.",
+        "Item-level permissions on a single SharePoint site keep each country's records separate.",
+        "Automated SLA scanner, manager nudges and risk flagging on check-ins.",
+        "Audit log on every HR outcome."
+      ],
+      "stack": [
+        "Power Apps",
+        "Power Automate",
+        "SharePoint Online",
+        "Microsoft Entra ID",
+        "Office 365"
+      ],
+      "capabilities": [
+        "automation",
+        "enterprise-apps",
+        "architecture",
+        "product"
+      ],
+      "flow": [
+        "New hire in HR report",
+        "Case created",
+        "Milestone check-ins",
+        "Manager review",
+        "HR decision",
+        "Outcome letter"
+      ],
+      "links": {},
+      "group": "enterprise"
+    },
+    {
+      "id": "bayobab-lifestyle-claims",
+      "order": 2,
+      "featured": true,
+      "name": "Lifestyle Benefit & Payroll Claims Portal",
+      "client": "Bayobab (MTN Group subsidiary)",
+      "sector": "Telecommunications · Finance & HR",
+      "type": "Enterprise app + automation",
+      "role": "Primary developer & architect",
+      "period": {
+        "start": "2026-05",
+        "end": "2026-07"
+      },
+      "status": "Live in production · post-launch support ongoing",
+      "summary": "A claims platform where employees submit benefit claims and HR approves, tracks balances and releases payroll batches across five countries.",
+      "problem": "Benefit claims were submitted by email and tracked in spreadsheets, so balances drifted, approvals were slow and Finance had no single auditable record.",
+      "solution": "A Power Apps portal with two-stage HR approval, live gross and net balance tracking, and month-end payout batches. Power Automate owns every balance change so claims are never deducted twice. Country rules for tax, time zones and attachments are handled in one app.",
+      "outcomes": [
+        {
+          "value": "5",
+          "label": "countries: Ghana, South Africa, Kenya, UAE and CAR",
+          "verified": true
+        },
+        {
+          "value": "1",
+          "label": "auditable record of every claim for Finance",
+          "verified": true
+        }
+      ],
+      "highlights": [
+        "Idempotent balance design that prevents double deductions.",
+        "Payout batches with paid-by, paid-on and batch reference audit fields, plus a guarded reversal flow.",
+        "Excel claim exports with attachments, emailed to HR on demand.",
+        "List-driven RBAC with four personas from approver to super admin."
+      ],
+      "stack": [
+        "Power Apps",
+        "Power Automate",
+        "SharePoint Online",
+        "Office Scripts",
+        "Excel",
+        "Azure"
+      ],
+      "capabilities": [
+        "automation",
+        "enterprise-apps",
+        "architecture"
+      ],
+      "flow": [
+        "Claim submitted",
+        "Balance reserved",
+        "L1 approval",
+        "L2 approval",
+        "Payroll batch",
+        "Marked paid"
+      ],
+      "links": {},
+      "group": "enterprise"
+    },
+    {
+      "id": "zurich-risk-assessment",
+      "order": 3,
+      "featured": true,
+      "name": "Risk Assessment Automation",
+      "client": "Zurich Insurance",
+      "sector": "Insurance",
+      "type": "Automation + .NET features",
+      "role": "Software developer / automation engineer",
+      "period": {
+        "start": "2024-09",
+        "end": "2025-07"
+      },
+      "status": "Delivered",
+      "summary": "Automation bots and AI-assisted features for an insurer's risk assessment suite, giving teams live visibility of policy compliance.",
+      "problem": "Risk register breaches and policy issues were caught late through manual audit.",
+      "solution": "Built bots that monitor the risk register, issue policy alerts and flag breaches as they happen. Added features to the .NET 8 suite and connected it to Power Automate, Power Apps and Copilot.",
+      "outcomes": [
+        {
+          "value": "Real-time",
+          "label": "breach alerts instead of periodic manual audit",
+          "verified": true
+        },
+        {
+          "value": "~30%",
+          "label": "faster feature delivery from standardised integration patterns",
+          "verified": true
+        }
+      ],
+      "highlights": [
+        "Automated risk audit workflows for security best practice.",
+        "Standardised integration patterns across the Microsoft stack.",
+        "Internal developer tooling that raised sprint throughput."
+      ],
+      "stack": [
+        ".NET 8",
+        "Entity Framework",
+        "Power Automate",
+        "Power Apps",
+        "Microsoft Copilot"
+      ],
+      "capabilities": [
+        "automation",
+        "ai",
+        "enterprise-apps"
+      ],
+      "flow": [
+        "Risk register change",
+        "Policy check",
+        "Breach detected",
+        "Alert teams",
+        "Logged"
+      ],
+      "links": {},
+      "group": "enterprise"
+    },
+    {
+      "id": "financial-rpa-banking",
+      "order": 4,
+      "featured": true,
+      "name": "Banking Automation & Reconciliation",
+      "client": "Enterprise Computing Ltd (two banking clients)",
+      "sector": "Banking & Finance",
+      "type": "RPA & reporting automation",
+      "role": "Automation engineer",
+      "period": {
+        "start": "2022-09",
+        "end": "2024-09"
+      },
+      "status": "Delivered",
+      "summary": "Automation for two banks: VISA and mobile money reconciliation reports, client onboarding, and analytics report collation.",
+      "problem": "Finance teams reconciled VISA and mobile money transactions by hand, onboarded new clients through paper-heavy steps, and pulled analytics reports together manually from several systems.",
+      "solution": "Built reconciliation bots that match card and mobile money transactions and produce exception reports, automated client acquisition and onboarding steps, and built tooling that collates client data into analytics reports on schedule.",
+      "outcomes": [
+        {
+          "value": "10K+",
+          "label": "transactions processed daily",
+          "verified": true
+        },
+        {
+          "value": "~65%",
+          "label": "less manual processing time",
+          "verified": true
+        }
+      ],
+      "highlights": [
+        "Reconciliation reports for VISA and mobile money transactions.",
+        "Automated client acquisition and onboarding workflow.",
+        "Scheduled collation of client analytics reports, replacing manual spreadsheet work.",
+        "Integrated with core banking APIs for account synchronisation."
+      ],
+      "stack": [
+        "Power Automate",
+        "Power Automate Desktop",
+        "Python",
+        "OpenPyxl",
+        "ASP.NET",
+        "Automation Anywhere",
+        "Core banking APIs"
+      ],
+      "capabilities": [
+        "automation",
+        "architecture"
+      ],
+      "flow": [
+        "VISA & MoMo files in",
+        "Match transactions",
+        "Flag exceptions",
+        "Reconciliation report",
+        "Sent to finance"
+      ],
+      "links": {},
+      "group": "enterprise"
+    },
+    {
+      "id": "insurance-suite",
+      "order": 5,
+      "featured": true,
+      "name": "Insurance Suite Platform",
+      "client": "Enterprise Computing Ltd",
+      "sector": "Insurance",
+      "type": "Enterprise web application",
+      "role": "Full-stack developer; architecture contributor",
+      "period": {
+        "start": "2022-01",
+        "end": "2023-05"
+      },
+      "status": "Delivered",
+      "summary": "An insurance platform covering client onboarding, underwriting, policy subscription, claims and payments.",
+      "solution": "Microservice-style system in ASP.NET and Angular, integrated with core insurance systems, with secure transactional workflows and payment integrations.",
+      "highlights": [
+        "Built the financial model for subscriptions, claims and payment requests.",
+        "OCR automation that reads client forms and onboards clients onto new insurance products.",
+        "Automation bots for heavy data processes in an isolated system."
+      ],
+      "stack": [
+        "ASP.NET",
+        "C#",
+        "Angular",
+        "REST",
+        "MySQL",
+        "Power Automate",
+        "OCR"
+      ],
+      "capabilities": [
+        "enterprise-apps",
+        "web",
+        "automation",
+        "architecture"
+      ],
+      "flow": [
+        "Form scanned (OCR)",
+        "Data captured",
+        "Client onboarded",
+        "Policy issued",
+        "Claim & payment"
+      ],
+      "links": {},
+      "group": "enterprise"
+    },
+    {
+      "id": "yarysa-emr",
+      "order": 6,
+      "featured": true,
+      "name": "Yarysa EMR",
+      "client": "Devdex Software",
+      "sector": "Healthcare",
+      "type": "SaaS web platform",
+      "role": "Core contributor; owner of inventory module",
+      "period": {
+        "start": "2020-01",
+        "end": "2021-11"
+      },
+      "status": "Delivered",
+      "summary": "A subscription electronic medical records platform used by health institutions across Ghana and West Africa.",
+      "problem": "Clinics ran patient records, appointments, billing and stock on paper and disconnected tools.",
+      "solution": "A Rails monolith with patient intake, scheduling, records, provider dashboards and subscription billing, backed by PostgreSQL, Redis and Sidekiq on Heroku.",
+      "outcomes": [
+        {
+          "value": "8+",
+          "label": "health institutions",
+          "verified": true
+        },
+        {
+          "value": "50K+",
+          "label": "patient records",
+          "verified": true
+        },
+        {
+          "value": "2,000+",
+          "label": "patient transactions a week",
+          "verified": true
+        },
+        {
+          "value": "~75%",
+          "label": "shorter patient waiting times",
+          "verified": true
+        },
+        {
+          "value": "1,000+",
+          "label": "inventory items tracked by the module I owned",
+          "verified": true
+        },
+        {
+          "value": "~33%",
+          "label": "higher retention from the feedback system",
+          "verified": true
+        }
+      ],
+      "highlights": [
+        "Owned the stock and inventory module, roughly halving expiry and quantity issues.",
+        "Built an anonymous patient feedback app with analytics.",
+        "ACID-safe workflows for records, billing and audit trails.",
+        "Redis caching that cut page loads by about 75%."
+      ],
+      "stack": [
+        "Ruby on Rails",
+        "PostgreSQL",
+        "Redis",
+        "Sidekiq",
+        "JavaScript",
+        "Heroku"
+      ],
+      "capabilities": [
+        "web",
+        "architecture"
+      ],
+      "flow": [
+        "Patient check-in",
+        "Consultation",
+        "Records updated",
+        "Billing",
+        "Stock adjusted"
+      ],
+      "links": {},
+      "group": "enterprise"
+    },
+    {
+      "id": "ai-resume-scanner",
+      "order": 7,
+      "featured": true,
+      "name": "Enterprise Resume Screening System",
+      "client": "4th-IR",
+      "sector": "HR Tech",
+      "type": "AI web application",
+      "role": "Associate Product Owner & developer",
+      "period": {
+        "start": "2024-10",
+        "end": "2025-08"
+      },
+      "status": "Delivered",
+      "summary": "Built at 4th-IR for HR teams: screens large volumes of applications against the APS resume standard and shortlists candidates with a trained model.",
+      "problem": "HR teams at client institutions checked every application by hand against a strict resume standard.",
+      "solution": "A Django and React platform that ingests applications in bulk, checks them against the standard, and uses an LLM to score and rank candidates for recruiters. I led product ownership and contributed to the architecture.",
+      "highlights": [
+        "Led product ownership: requirements, documentation, resource allocation and go-to-market input from customer discovery.",
+        "Contributed to architecture and deployment."
+      ],
+      "stack": [
+        "Python",
+        "Django",
+        "React",
+        "Next.js",
+        "MySQL",
+        "MongoDB",
+        "PyTorch",
+        "Pydantic",
+        "LLM"
+      ],
+      "capabilities": [
+        "ai",
+        "web",
+        "product"
+      ],
+      "flow": [
+        "Applications received",
+        "Checked against standard",
+        "LLM scoring",
+        "Ranked shortlist for HR"
+      ],
+      "links": {},
+      "group": "enterprise",
+      "audience": "Employers and HR teams"
+    },
+    {
+      "id": "hirivo",
+      "order": 8,
+      "featured": true,
+      "name": "Hirivo (Resume Analyzer)",
+      "client": "",
+      "sector": "HR Tech · AI",
+      "type": "AI web application",
+      "role": "Builder",
+      "period": {
+        "start": "2025-12",
+        "end": "2026-03"
+      },
+      "status": "Personal project",
+      "summary": "My own product for job seekers: scores a CV against a specific job post, flags ATS issues, and writes a tailored version as Word or PDF.",
+      "stack": [
+        "Ruby on Rails 8 (API)",
+        "Angular",
+        "PostgreSQL",
+        "Sidekiq",
+        "Redis",
+        "OpenAI",
+        "Devise JWT",
+        "AWS S3",
+        "Docker"
+      ],
+      "capabilities": [
+        "ai",
+        "web"
+      ],
+      "flow": [
+        "Upload CV",
+        "Paste job post",
+        "LLM analysis",
+        "ATS check",
+        "Tailored rewrite"
+      ],
+      "links": {
+        "repo": "https://github.com/Juxlarry/resume-analyzer"
+      },
+      "problem": "Job seekers send the same resume everywhere and can't see why it fails applicant tracking systems.",
+      "solution": "A Rails 8 API with an Angular front end. Uploaded CVs are parsed, analysed by an LLM in background jobs, checked for ATS problems, and rewritten into LaTeX-generated documents.",
+      "highlights": [
+        "Background analysis and rewrite jobs with Sidekiq and Redis.",
+        "ATS detection and LaTeX-based DOCX/PDF generation.",
+        "JWT auth with TOTP two-factor and rate limiting.",
+        "Swagger-documented API and admin activity log."
+      ],
+      "group": "personal",
+      "audience": "Individual job seekers",
+      "gallery": [
+        {
+          "src": "/shots/hirivo-home.webp",
+          "alt": "Hirivo home page with role-match scoring, rewrite and export features",
+          "caption": "Landing page: score, improve, rewrite, export"
+        },
+        {
+          "src": "/shots/hirivo-analyser.webp",
+          "alt": "Hirivo Resume Analyser form with job title, description, job PDF quick fill and CV upload",
+          "caption": "Analyser: paste a job post or upload its PDF, then add your CV"
+        }
+      ]
+    },
+    {
+      "id": "cutcraft",
+      "order": 10,
+      "featured": true,
+      "name": "CutCraft",
+      "client": "",
+      "sector": "Grooming & beauty",
+      "type": "AI SaaS",
+      "role": "Builder",
+      "period": {
+        "start": "2025-11",
+        "end": "2026-03"
+      },
+      "status": "Personal project",
+      "summary": "A shop management tool for barbers and salons, with AI that previews a client's new style before the cut.",
+      "stack": [
+        "Ruby on Rails",
+        "Hotwire",
+        "Turbo",
+        "OpenAI",
+        "Flux (FLUX Kontext)",
+        "Claude API"
+      ],
+      "capabilities": [
+        "ai",
+        "web"
+      ],
+      "flow": [
+        "Client books",
+        "AI style preview",
+        "Cut",
+        "Repeat booking"
+      ],
+      "links": {},
+      "group": "personal"
+    },
+    {
+      "id": "llm-data-modeling-tool",
+      "order": 11,
+      "featured": false,
+      "name": "LLM Data Modeling Tool",
+      "client": "4th-IR",
+      "sector": "AI / Data",
+      "type": "AI tool",
+      "role": "Product manager & support developer",
+      "period": {
+        "start": "2024-10",
+        "end": "2025-08"
+      },
+      "status": "Delivered",
+      "summary": "A tool that generates data models using large language models with retrieval-augmented generation.",
+      "stack": [
+        "LLM",
+        "RAG",
+        "Python"
+      ],
+      "capabilities": [
+        "ai",
+        "architecture",
+        "product"
+      ],
+      "flow": [
+        "Describe domain",
+        "Retrieve context",
+        "Generate model",
+        "Review"
+      ],
+      "links": {},
+      "group": "enterprise"
+    },
+    {
+      "id": "tourist-insurance-api",
+      "order": 12,
+      "featured": false,
+      "name": "Tourist Insurance API",
+      "client": "Enterprise Computing Ltd",
+      "sector": "Insurance · Tourism",
+      "type": "API",
+      "role": "API architect & developer",
+      "period": {
+        "start": null,
+        "end": null
+      },
+      "status": "Delivered",
+      "summary": "A secure API that lets thousands of tourists buy insurance packages online.",
+      "outcomes": [
+        {
+          "value": "5,000+",
+          "label": "customers served",
+          "verified": true
+        },
+        {
+          "value": "200+",
+          "label": "concurrent requests at peak season",
+          "verified": true
+        }
+      ],
+      "highlights": [
+        "JWT auth with role-based authorization.",
+        "Idempotent payment endpoints with rollback and audit trails.",
+        "Rate limiting, monitoring and logging in production."
+      ],
+      "stack": [
+        "Ruby on Rails API",
+        "PostgreSQL",
+        "JWT",
+        "Payment gateways"
+      ],
+      "capabilities": [
+        "web",
+        "architecture"
+      ],
+      "flow": [
+        "Choose cover",
+        "Pay",
+        "Policy issued",
+        "Receipt"
+      ],
+      "links": {},
+      "group": "enterprise"
+    },
+    {
+      "id": "hr-management-app",
+      "order": 13,
+      "featured": false,
+      "name": "Employee & HR Management App",
+      "client": "Enterprise Computing Ltd",
+      "sector": "HR",
+      "type": "Web application",
+      "role": "Full-stack developer",
+      "period": {
+        "start": "2022-05",
+        "end": "2023-02"
+      },
+      "status": "Delivered",
+      "summary": "HR platform for leave, salary, inventory and pension-provider integrations, scaled for institutions with 10,000+ users.",
+      "stack": [
+        "Node.js",
+        "Express",
+        "Angular",
+        "GraphQL",
+        "Firebase"
+      ],
+      "capabilities": [
+        "web",
+        "enterprise-apps"
+      ],
+      "flow": [
+        "Leave request",
+        "Approval",
+        "Payroll sync",
+        "Notification"
+      ],
+      "links": {},
+      "group": "enterprise"
+    },
+    {
+      "id": "github-collab-viz",
+      "order": 14,
+      "featured": false,
+      "name": "GitHub Collaboration Dashboards",
+      "client": "Enterprise Computing Ltd",
+      "sector": "Developer tooling",
+      "type": "Internal tool",
+      "role": "Developer",
+      "period": {
+        "start": null,
+        "end": null
+      },
+      "status": "Delivered",
+      "summary": "Dashboards that made pull-request bottlenecks visible to the engineering team.",
+      "outcomes": [
+        {
+          "value": "7 → 2 days",
+          "label": "code review time",
+          "verified": true
+        },
+        {
+          "value": "10 → 25",
+          "label": "pull requests a week",
+          "verified": true
+        }
+      ],
+      "stack": [
+        "GitHub API",
+        "JavaScript"
+      ],
+      "capabilities": [
+        "automation"
+      ],
+      "flow": [
+        "PR opened",
+        "Review tracked",
+        "Bottleneck shown"
+      ],
+      "links": {},
+      "group": "enterprise"
+    },
+    {
+      "id": "atada-work",
+      "order": 15,
+      "featured": false,
+      "name": "Atada Work",
+      "client": "Client build",
+      "sector": "HR / Workforce",
+      "type": "Workforce management platform (web + mobile)",
+      "role": "Lead developer",
+      "period": {
+        "start": "2026-01",
+        "end": null
+      },
+      "status": "Web and mobile apps live in testing",
+      "summary": "A workforce platform with web and mobile apps for staff onboarding, shift management, attendance, biometric access and payroll.",
+      "stack": [
+        "Go",
+        "Flutter",
+        "Flutter Web",
+        "Firebase",
+        "Azure",
+        "New Relic"
+      ],
+      "capabilities": [
+        "web",
+        "mobile",
+        "enterprise-apps"
+      ],
+      "flow": [
+        "Staff clock in on mobile",
+        "Shift tracked",
+        "Manager notified",
+        "Payroll calculated"
+      ],
+      "links": {},
+      "highlights": [
+        "Companion web and mobile apps sharing one Go backend.",
+        "Biometric registration and clock-in."
+      ],
+      "group": "client",
+      "private": true
+    },
+    {
+      "id": "tours-a-tour",
+      "order": 16,
+      "featured": false,
+      "name": "Tours a Tour",
+      "client": "Ghana tour operator (Bensy Legacy client)",
+      "sector": "Tourism",
+      "type": "Booking platform",
+      "role": "Product owner, architect & designer",
+      "period": {
+        "start": "2026",
+        "end": null
+      },
+      "status": "Prototype complete; build in progress",
+      "summary": "A tour booking platform for a Ghana tour operator: fixed departures, on-request tours and custom guide hire, with online payments.",
+      "highlights": [
+        "Two booking models with a confirm-then-pay window.",
+        "Brand identity and clickable prototype ahead of build."
+      ],
+      "stack": [
+        "Next.js",
+        "React",
+        "Firebase",
+        "Firestore",
+        "Cloud Functions",
+        "Paystack",
+        "Tidio"
+      ],
+      "capabilities": [
+        "web",
+        "architecture",
+        "product"
+      ],
+      "flow": [
+        "Pick tour",
+        "Request date",
+        "Operator confirms",
+        "Pay in 48h",
+        "Booked"
+      ],
+      "links": {},
+      "group": "client",
+      "private": true
+    },
+    {
+      "id": "bensy-legacy-platform",
+      "order": 17,
+      "featured": false,
+      "name": "Bensy Legacy Platform",
+      "client": "Bensy Legacy",
+      "private": true,
+      "sector": "Commerce",
+      "type": "Multi-vertical platform",
+      "role": "Lead developer & architect",
+      "period": {
+        "start": "2026",
+        "end": null
+      },
+      "status": "In build",
+      "summary": "A multi-vertical commerce platform for the Ghana market. Details are private while it's in build.",
+      "stack": [
+        "Ruby on Rails (API)",
+        "Next.js",
+        "Headless CMS",
+        "Docker"
+      ],
+      "capabilities": [
+        "web",
+        "architecture"
+      ],
+      "flow": [
+        "Listing created",
+        "Published",
+        "Buyer enquiry",
+        "Deal closed"
+      ],
+      "links": {},
+      "group": "client",
+      "highlights": []
+    },
+    {
+      "id": "her-prayer-hub",
+      "order": 18,
+      "featured": false,
+      "name": "Her Prayer Hub",
+      "client": "Her Prayer Hub (Bensy Legacy client)",
+      "sector": "Faith & non-profit",
+      "type": "WordPress site",
+      "role": "Developer",
+      "period": {
+        "start": "2026",
+        "end": null
+      },
+      "status": "Client review",
+      "summary": "A plugin-free WordPress theme with a prayer wall, events, devotionals, testimonies and Paystack giving.",
+      "highlights": [
+        "Built entirely on native WordPress APIs, with no plugins to maintain.",
+        "Paystack secret key kept server-side; payments verified before they're recorded."
+      ],
+      "stack": [
+        "WordPress",
+        "PHP",
+        "JavaScript",
+        "Paystack"
+      ],
+      "capabilities": [
+        "web"
+      ],
+      "flow": [
+        "Visitor gives",
+        "Paystack checkout",
+        "Server verifies",
+        "Gift recorded"
+      ],
+      "links": {},
+      "group": "client",
+      "private": true
+    },
+    {
+      "id": "ebaba-academy",
+      "order": 19,
+      "featured": false,
+      "name": "EBABA Academy",
+      "client": "EBABA academy (Bensy Legacy client)",
+      "sector": "Education",
+      "type": "WordPress site",
+      "role": "Developer",
+      "period": {
+        "start": "2026",
+        "end": null
+      },
+      "status": "[confirm]",
+      "summary": "A plugin-free WordPress theme for an academy, with staff profiles and Paystack application fees.",
+      "stack": [
+        "WordPress",
+        "PHP",
+        "ACF",
+        "Paystack"
+      ],
+      "capabilities": [
+        "web"
+      ],
+      "flow": [
+        "Apply",
+        "Pay fee",
+        "Verified",
+        "Application logged"
+      ],
+      "links": {},
+      "group": "client",
+      "private": true,
+      "highlights": []
+    },
+    {
+      "id": "qismic-profile",
+      "order": 20,
+      "featured": false,
+      "name": "Qismic Profile",
+      "client": "Own product",
+      "sector": "Lifestyle",
+      "type": "Web app",
+      "role": "Builder & brand designer",
+      "period": {
+        "start": "2026-10",
+        "end": null
+      },
+      "status": "In development",
+      "summary": "An app that builds a personal profile from cosmic details: birth date, constellation, sign and name.",
+      "stack": [
+        "[confirm stack]"
+      ],
+      "capabilities": [
+        "web"
+      ],
+      "flow": [
+        "Enter birth details",
+        "Map the stars",
+        "Profile generated"
+      ],
+      "links": {},
+      "group": "personal"
+    },
+    {
+      "id": "gaffer-xi",
+      "order": 9,
+      "featured": true,
+      "name": "GafferXi",
+      "client": "Own product",
+      "sector": "Sport",
+      "type": "Web app",
+      "role": "Builder and designer",
+      "period": {
+        "start": "2026",
+        "end": null
+      },
+      "status": "Live",
+      "summary": "A football squad builder for World Cup 2026: pick a formation, build a starting XI from the national player pool, get an AI scout report, and plan moves on a tactical board.",
+      "stack": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "Konva",
+        "Motion",
+        "Google Gemini",
+        "Vercel"
+      ],
+      "capabilities": [
+        "web",
+        "ai"
+      ],
+      "flow": [
+        "Pick formation",
+        "Fill starting XI",
+        "Rating and chemistry",
+        "AI scout report",
+        "Tactical board"
+      ],
+      "links": {
+        "live": "https://www.gafferxi.com"
+      },
+      "group": "personal",
+      "problem": "Fans and pundits debate line-ups all the time, but there was no quick way to build a squad, see how it rates, and sketch tactics in one place.",
+      "solution": "A web app with formation presets, a searchable player pool, live squad rating and chemistry, an AI-generated scout report once the XI is complete, and a tactical board with drawing tools, overlays and export.",
+      "highlights": [
+        "Squad rules enforced as you build, such as minimum goalkeepers.",
+        "AI scout report with tactical overview and key strengths.",
+        "Tactical board with arrows, shapes, pressing zones and offside line.",
+        "Share and export squads."
+      ],
+      "gallery": [
+        {
+          "src": "/shots/gafferxi-builder.webp",
+          "alt": "GafferXi squad builder with formations, player pool and pitch",
+          "caption": "Squad builder: formations, player pool and squad list"
+        },
+        {
+          "src": "/shots/gafferxi-scout.webp",
+          "alt": "GafferXi AI scout report for a Ghana 4-3-3 starting eleven",
+          "caption": "AI scout report for a completed XI"
+        },
+        {
+          "src": "/shots/gafferxi-board.webp",
+          "alt": "GafferXi tactical board with two teams and drawing tools",
+          "caption": "Tactical board with drawing tools and overlays"
+        }
+      ]
+    },
+    {
+      "id": "accra-sankofa-elects",
+      "order": 21,
+      "featured": false,
+      "name": "Accra Sankofa Elects",
+      "client": "Accra Sankofa club",
+      "sector": "Civic · Community",
+      "type": "Election web app",
+      "role": "Builder",
+      "period": {
+        "start": "2026",
+        "end": null
+      },
+      "status": "Live",
+      "summary": "A club election nomination app that verifies members by one-time code against the member register.",
+      "stack": [
+        "Supabase",
+        "PostgreSQL",
+        "Resend",
+        "Firebase Hosting"
+      ],
+      "capabilities": [
+        "web",
+        "automation"
+      ],
+      "flow": [
+        "Member enters email",
+        "OTP sent",
+        "Verified against register",
+        "Nomination recorded"
+      ],
+      "links": {
+        "live": "https://accra-sankofa-elects.web.app"
+      },
+      "group": "personal"
+    },
+    {
+      "id": "product-discovery-form",
+      "order": 22,
+      "featured": false,
+      "name": "Product Discovery Form",
+      "client": "Bensy Legacy",
+      "sector": "Consulting",
+      "type": "Internal tool",
+      "role": "Creator",
+      "period": {
+        "start": "2026",
+        "end": null
+      },
+      "status": "In use",
+      "summary": "A client scoping tool that turns a first conversation into a buildable brief.",
+      "stack": [
+        "Web"
+      ],
+      "capabilities": [
+        "product"
+      ],
+      "flow": [
+        "Client answers",
+        "Scope drafted",
+        "Estimate",
+        "Kick-off"
+      ],
+      "links": {},
+      "group": "personal"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Microsoft Power Platform Architect",
+      "issuer": "Microsoft",
+      "verified": false,
+      "note": "Confirm exact credential name (e.g. PL-600 Solution Architect Expert) for the site."
+    },
+    {
+      "name": "Microsoft Power Automate Expert",
+      "issuer": "Microsoft",
+      "verified": false,
+      "note": "Confirm exact credential name."
+    },
+    {
+      "name": "Certified Master RPA Professional",
+      "issuer": "Automation Anywhere",
+      "date": "2022-03"
+    },
+    {
+      "name": "Certified Application Security Engineer (Java)",
+      "issuer": "EC-Council",
+      "date": "2022-06"
+    },
+    {
+      "name": "PMI Agile Certified Practitioner (PMI-ACP)",
+      "issuer": "PMI",
+      "date": "2022-06"
+    },
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services"
+    },
+    {
+      "name": "Azure Fundamentals",
+      "issuer": "Microsoft"
+    }
+  ],
+  "inProgress": [
+    {
+      "name": "AB-400, AB-410, AB-100 (Agentic AI Business Solutions Architect), PL-300",
+      "target": "Oct 2026 - Sep 2027"
+    }
+  ],
+  "education": [
+    {
+      "degree": "BSc Information Technology",
+      "major": "Software Engineering"
+    }
+  ],
+  "beyondCode": [
+    {
+      "role": "Sports pundit",
+      "org": "Woezor TV",
+      "detail": "On-air analysis for FIFA World Cup 2026 coverage."
+    },
+    {
+      "role": "Community",
+      "org": "Dev Congress · Slightly Techie",
+      "detail": "Meetups, instruction and community building around Rails, automation and AI."
+    }
+  ],
+  "testimonials": [],
+  "todo": [
+    "Add repo or live links where public.",
+    "Add 2-3 testimonials (HR stakeholder, client, former lead).",
+    "Hirivo: add a results screenshot (score and gap analysis) using an invented CV.",
+    "CutCraft: add screenshots or a live link."
+  ],
+  "training": {
+    "headline": "I teach people to see their work as a process, then automate it.",
+    "intro": "Alongside building, I train teams and professionals to map how their work flows, find the manual steps, and automate them. I also teach public speaking, and computing to primary school pupils.",
+    "trainedFrom": [
+      "Volta River Authority",
+      "Tech Mahindra",
+      "Banking institutions",
+      "Insurance companies",
+      "Independent professionals"
+    ],
+    "programmes": [
+      {
+        "id": "bpa",
+        "icon": "presentation",
+        "featured": true,
+        "title": "Business Process Automation",
+        "audience": "Corporate staff",
+        "via": "Enterprise Computing Ltd",
+        "summary": "Hands-on training for operations, finance and IT staff on mapping business processes and automating them.",
+        "cohorts": [
+          "Volta River Authority, two cohorts",
+          "Banking institutions",
+          "Insurance companies"
+        ],
+        "topics": [
+          "Process mapping",
+          "Spotting automation candidates",
+          "Building and testing flows",
+          "Measuring time saved"
+        ]
+      },
+      {
+        "id": "process",
+        "icon": "flow-arrow",
+        "title": "Business Systems and Process Optimisation",
+        "audience": "Tech Mahindra staff and independent professionals",
+        "summary": "How business systems fit together, how to identify process workflows, and how to optimise them with automation.",
+        "topics": [
+          "Business systems",
+          "Workflow discovery",
+          "Optimisation with automation"
+        ]
+      },
+      {
+        "id": "speaking",
+        "icon": "microphone-stage",
+        "title": "Public Speaking",
+        "audience": "Professionals",
+        "summary": "Training on structuring a message and presenting it with clarity and confidence, drawn from live TV experience.",
+        "topics": [
+          "Structure",
+          "Delivery",
+          "Speaking under pressure"
+        ]
+      },
+      {
+        "id": "webdev",
+        "icon": "browsers",
+        "title": "Web Development: Ruby and JavaScript",
+        "audience": "Aspiring developers",
+        "via": "Devdex Software",
+        "summary": "A practice-based curriculum for learning Ruby and JavaScript by building real features.",
+        "topics": [
+          "Ruby",
+          "JavaScript",
+          "Building by doing"
+        ]
+      },
+      {
+        "id": "computing",
+        "icon": "student",
+        "title": "Computing in schools",
+        "audience": "Grades 1 to 6",
+        "summary": "Computing lessons for primary pupils on the Pearson curriculum, turning technical ideas into age-appropriate activities.",
+        "topics": [
+          "Pearson curriculum",
+          "Digital literacy",
+          "First steps in logic"
+        ]
+      }
+    ]
+  }
+}

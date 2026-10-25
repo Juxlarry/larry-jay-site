@@ -1,0 +1,21 @@
+---
+import Icon from './Icon.astro';
+import data from '../data/portfolio.json';
+const bio = data.positioning.bio;
+const offClock = [
+  { icon: 'microphone-stage', title: 'On-air sports pundit', text: 'Live tactical analysis on Woezor TV.' },
+  { icon: 'users-three', title: 'Community builder', text: 'Member of Dev Congress and Slightly Techie. Leo-Lion with Accra Premier Lions Club and Accra Sankofa Leo Club.' },
+];
+---
+<section class="about gut" id="about">
+  <div class="wrap">
+    <img class="ava" src="/avatar.svg" alt="Illustrated avatar of Larry Jay" width="88" height="88" loading="lazy" />
+    <div>
+      <h3 class="about-h">About Larry Jay</h3>
+      <p class="bio">{bio.medium}{'aboutExtra' in bio && bio.aboutExtra ? ` ${bio.aboutExtra}` : ''}</p>
+      <div class="offclock">
+        {offClock.map((o) => <div class="oc"><Icon name={o.icon} /><div><b>{o.title}</b><span>{o.text}</span></div></div>)}
+      </div>
+    </div>
+  </div>
+</section>

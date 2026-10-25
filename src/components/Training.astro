@@ -1,0 +1,39 @@
+---
+import Icon from './Icon.astro';
+import data from '../data/portfolio.json';
+const T = data.training;
+const F = T.programmes.find((p) => p.featured)!;
+const rest = T.programmes.filter((p) => !p.featured);
+---
+<section class="gut" id="training">
+  <div class="wrap">
+    <p class="eyebrow">Training and teaching</p>
+    <h2>{T.headline}</h2>
+    <p class="sub">{T.intro}</p>
+    <div class="trained" aria-label="Teams trained">{T.trainedFrom.map((o) => <span>{o}</span>)}</div>
+    <div class="feature">
+      <div>
+        <Icon name={F.icon} />
+        <h3>{F.title}</h3>
+        <p>{F.summary}</p>
+        <div class="topics">{F.topics.map((t) => <span class="pill">{t}</span>)}</div>
+        {F.via && <span class="via">Delivered through {F.via}</span>}
+      </div>
+      <div class="cohorts">
+        {F.cohorts?.map((c) => <div class="cohort"><Icon name="users-three" />{c}</div>)}
+      </div>
+    </div>
+    <div class="tlist">
+      {rest.map((p) => (
+        <article class="trow">
+          <Icon name={p.icon} />
+          <div>
+            <h4>{p.title}</h4>
+            <span class="aud">{p.audience}{p.via ? `, via ${p.via}` : ''}</span>
+            <p>{p.summary}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

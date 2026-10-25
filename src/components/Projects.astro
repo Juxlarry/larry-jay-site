@@ -1,0 +1,42 @@
+---
+import Icon from './Icon.astro';
+import { projects, isFilled, caseUrl } from '../lib/format';
+const groups = [
+  { id: 'enterprise', label: 'Enterprise work', icon: 'buildings' },
+  { id: 'client', label: 'Client projects', icon: 'lock-simple' },
+  { id: 'personal', label: 'Personal projects', icon: 'rocket-launch' },
+];
+const all = [...projects].sort((a, b) => a.order - b.order);
+const count = (g: string) => all.filter((p) => p.group === g).length;
+const groupIcon = Object.fromEntries(groups.map((g) => [g.id, g.icon]));
+---
+<section class="gut" id="projects">
+  <div class="wrap">
+    <h2>Enterprise work, client builds and my own products.</h2>
+    <p class="sub">Client projects stay private, so they're shown without code or internal detail.</p>
+    <div class="tabs" role="group" aria-label="Project groups">
+      {groups.map((g, i) => (
+        <button type="button" aria-pressed={i === 0 ? 'true' : 'false'} data-g={g.id}>{g.label} ({count(g.id)})</button>
+      ))}
+    </div>
+    <div class="plist">
+      {all.map((p) => (
+        <article class="prow" id={p.featured ? undefined : `p-${p.id}`} data-g={p.group} hidden={p.group !== 'enterprise'}>
+          <div class="ic"><Icon name={groupIcon[p.group]} /></div>
+          <div>
+            <h4>{p.name}{p.private && <span class="lock"><Icon name="lock-simple" />Private</span>}</h4>
+            <p>{p.summary}</p>
+            <div class="links">
+              {p.featured && <a href={caseUrl(p)}>Case study</a>}
+              {p.links?.live && <a href={p.links.live} target="_blank" rel="noopener">Visit live<Icon name="arrow-up-right" /></a>}
+              {p.links?.repo && <a href={p.links.repo} target="_blank" rel="noopener">Code<Icon name="arrow-up-right" /></a>}
+              {!p.featured && !p.links?.live && !p.links?.repo && (
+                <span class="stack-note">{p.stack.filter(isFilled).slice(0, 3).join(', ')}</span>
+              )}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { iconSvg } from '../lib/icons';
+import { COLOURS, STICKERS, MAX_MESSAGE, MAX_SIGNATURE } from '../lib/guestbook';
+
+const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL ?? '';
+const anonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY ?? '';
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '';
+// Icons the wall needs when it renders notes in the browser.
+const icons = Object.fromEntries([...STICKERS.map(([s]) => s), 'push-pin'].map((n) => [n, iconSvg(n)]));
+---
+<Base title="Sign my wall | Larry Jay" description="Leave a note on Larry Jay's guestbook wall." current="guestbook">
+  <div class="gb" id="gb" data-url={supabaseUrl} data-key={anonKey}>
+    <section class="gb-head gut">
+      <div class="wrap">
+        <div>
+          <h1>Leave your mark on <span class="hl">the wall.</span></h1>
+          <p class="lede">Say hello, tell me what you thought of my work, or just sign the wall. Notes appear once I've approved them.</p>
+          <p class="count" id="count"><b>0</b> notes pinned so far</p>
+        </div>
+
+        <form class="composer" id="form" novalidate>
+          <div class="field">
+            <label for="gb-msg">Your note</label>
+            <textarea id="gb-msg" name="message" maxlength={MAX_MESSAGE} placeholder="Loved the flow animation. Can we talk about automating our approvals?"></textarea>
+            <div class="help"><span id="left">{MAX_MESSAGE}</span> characters left</div>
+          </div>
+          <div class="field">
+            <label for="gb-sig">Sign as (optional)</label>
+            <input type="text" id="gb-sig" name="signature" maxlength={MAX_SIGNATURE} placeholder="Ama, product lead at a fintech" />
+          </div>
+          <fieldset>
+            <legend>Note colour</legend>
+            <div class="choices">
+              {COLOURS.map(([v, label], i) => (
+                <label><input type="radio" name="colour" id={`col-${v}`} value={v} checked={i === 0} /><span class={`sw c-${v}`} title={label}><span class="lbl">{label}</span></span></label>
+              ))}
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Sticker</legend>
+            <div class="choices">
+              {STICKERS.map(([v, label], i) => (
+                <label><input type="radio" name="sticker" id={`stk-${v}`} value={v} checked={i === 0} /><span class="sw st" title={label}><Icon name={v} /><span class="lbl">{label}</span></span></label>
+              ))}
+            </div>
+          </fieldset>
+          {siteKey && <div class="cf-turnstile" data-sitekey={siteKey} data-theme="auto"></div>}
+          <div class="err" id="err" role="alert"></div>
+          <div class="actions">
+            <button class="btn gold" type="submit" id="save"><Icon name="push-pin" /><span>Pin my note</span></button>
+            <span class="gb-status" id="status" role="status"></span>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="gut gb-wall-wrap" aria-label="Notes on the wall">
+      <div class="wrap wall" id="wall">
+        <article class="note host c-ink" style="--r:-1.6deg">
+          <Icon name="push-pin" class="pin" />
+          <Icon name="hand-waving" class="stk" />
+          <p>Welcome to my wall. Thanks for stopping by. Leave a note, ask a question, or tell me about a process you'd love to automate.</p>
+          <div class="by"><b>Larry Jay</b></div>
+        </article>
+      </div>
+    </section>
+  </div>
+  <script is:inline type="application/json" id="gb-icons" set:html={JSON.stringify(icons)}></script>
+  {siteKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+</Base>
+
+<script>
+  import '../scripts/guestbook';
+</script>

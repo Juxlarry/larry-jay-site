@@ -1,0 +1,22 @@
+---
+// Screenshot viewer: one large image with thumbnails to switch (behaviour in scripts/gallery.ts).
+interface Props { shots: { src: string; alt: string; caption: string }[]; name: string; eager?: boolean }
+const { shots, name, eager = false } = Astro.props;
+const first = shots[0];
+---
+<figure class="shots" data-shots>
+  <div class="shot-main">
+    <img src={first.src} alt={first.alt} loading={eager ? 'eager' : 'lazy'} width="1400" height="1050" />
+  </div>
+  <figcaption>{first.caption}</figcaption>
+  {shots.length > 1 && (
+    <div class="thumbs" role="group" aria-label={`${name} screenshots`}>
+      {shots.map((g, k) => (
+        <button type="button" aria-pressed={k === 0 ? 'true' : 'false'} data-src={g.src} data-alt={g.alt} data-cap={g.caption}>
+          <img src={g.src} alt="" loading="lazy" width="76" height="54" />
+          <span class="lbl">Screenshot {k + 1}: {g.caption}</span>
+        </button>
+      ))}
+    </div>
+  )}
+</figure>

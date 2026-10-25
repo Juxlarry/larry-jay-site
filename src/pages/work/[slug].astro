@@ -1,0 +1,82 @@
+---
+// One page per featured project, generated at build time from portfolio.json.
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import Workflow from '../../components/Workflow.astro';
+import Gallery from '../../components/Gallery.astro';
+import { featured, fmtPeriod, isFilled, caseUrl, type Project } from '../../lib/format';
+
+export function getStaticPaths() {
+  return featured.map((p, i) => ({
+    params: { slug: p.id },
+    props: { p, prev: featured[i - 1] ?? featured[featured.length - 1], next: featured[i + 1] ?? featured[0] },
+  }));
+}
+interface Props { p: Project; prev: Project; next: Project }
+const { p, prev, next } = Astro.props;
+const period = fmtPeriod(p.period);
+---
+<Base title={`${p.name} | Larry Jay`} description={p.summary} current="work">
+  <article class="cs gut">
+    <div class="wrap">
+      <a class="back" href="/#work"><Icon name="arrow-up-right" class="flip" />All work</a>
+      <header class="cs-head">
+        <p class="eyebrow">{p.sector}</p>
+        <h1>{p.name}</h1>
+        <p class="cs-sum">{p.summary}</p>
+        <dl class="facts">
+          {isFilled(p.client) && <div><dt>Client</dt><dd>{p.client}</dd></div>}
+          <div><dt>Role</dt><dd>{p.role}</dd></div>
+          {period && <div><dt>When</dt><dd>{period}</dd></div>}
+          <div><dt>Status</dt><dd>{isFilled(p.status) ? p.status : 'Delivered'}</dd></div>
+        </dl>
+        {(p.links?.live || p.links?.repo) && (
+          <div class="ctas">
+            {p.links?.live && <a class="btn gold" href={p.links.live} target="_blank" rel="noopener">Visit live site<Icon name="arrow-up-right" /></a>}
+            {p.links?.repo && <a class="btn" href={p.links.repo} target="_blank" rel="noopener"><Icon name="github-logo" />View code</a>}
+          </div>
+        )}
+      </header>
+
+      <div class="cs-visual">
+        {p.gallery && p.gallery.length > 0
+          ? <Gallery shots={p.gallery} name={p.name} eager />
+          : <Workflow steps={p.flow} status={isFilled(p.status) ? p.status : 'Delivered'} label={p.name} />}
+      </div>
+
+      {p.outcomes && p.outcomes.length > 0 && (
+        <div class="outs cs-outs">
+          {p.outcomes.map((o) => <div class="out"><b>{o.value}</b><span>{o.label}</span></div>)}
+        </div>
+      )}
+
+      <div class="cs-body">
+        {p.problem && <section><h2>The problem</h2><p>{p.problem}</p></section>}
+        {p.solution && <section><h2>What I built</h2><p>{p.solution}</p></section>}
+        {p.highlights && p.highlights.length > 0 && (
+          <section><h2>Highlights</h2><ul>{p.highlights.map((h) => <li>{h}</li>)}</ul></section>
+        )}
+        <section>
+          <h2>Built with</h2>
+          <div class="stackp">{p.stack.filter(isFilled).map((s) => <span class="pill">{s}</span>)}</div>
+        </section>
+      </div>
+
+      <nav class="cs-nav" aria-label="More case studies">
+        <a href={caseUrl(prev)}><span>Previous</span><b>{prev.name}</b></a>
+        <a href={caseUrl(next)} class="next"><span>Next</span><b>{next.name}</b></a>
+      </nav>
+
+      <div class="contact cs-cta">
+        <h2>Need something like this?</h2>
+        <div class="row"><a class="btn gold" href="/#contact">Start a project</a><a class="btn" href="/guestbook/">Sign my wall</a></div>
+      </div>
+    </div>
+  </article>
+</Base>
+
+<script>
+  import { runSteps, bindRunner } from '../../scripts/runner';
+  import '../../scripts/gallery';
+  document.querySelectorAll<HTMLElement>('.runner').forEach((r) => { bindRunner(r); setTimeout(() => runSteps(r), 400); });
+</script>
