@@ -4,8 +4,8 @@ import vercel from '@astrojs/vercel';
 
 // Pages are static (fast, cheap). Only /api/notes runs on demand, as a Vercel function.
 export default defineConfig({
-  // Change this to your custom domain if you add one later.
-  site: 'https://larryjay.vercel.app',
+  // Custom domain (set up in Vercel > Settings > Domains).
+  site: 'https://larry-jay.com',
   output: 'static',
   adapter: vercel(),
 });
